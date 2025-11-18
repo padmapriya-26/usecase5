@@ -19,6 +19,17 @@ pipeline {
                 }  
             }  
         }
+        stage('Install Ansible') {
+    steps {
+        sh '''
+            sudo apt update -y
+            sudo apt install -y software-properties-common
+            sudo add-apt-repository --yes --update ppa:ansible/ansible
+            sudo apt install -y ansible
+            ansible --version
+        '''
+    }
+}
         stage('Push to Docker Hub') {  
             steps {  
                 sh """  

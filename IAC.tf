@@ -1,5 +1,5 @@
 provider "google" {
-    project = "siva-477505" 
+    project = "sinuous-voice-476704-d4" 
     credentials = file("/var/lib/jenkins/5a.json")
 }
 resource "google_compute_instance" "instance1" {

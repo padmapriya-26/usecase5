@@ -33,7 +33,7 @@ pipeline {
                 dir('/var/lib/jenkins/workspace/usecase5') {
                     sh 'git pull origin main'
                     sh 'terraform init'
-                    sh 'terraform apply -auto-approve'
+                    sh 'terraform apply --auto-approve'
                 }
             }
         }

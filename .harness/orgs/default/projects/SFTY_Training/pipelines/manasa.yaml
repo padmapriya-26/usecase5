@@ -39,3 +39,36 @@ pipeline:
                   spec:
                     shell: Sh
                     command: echo "helo world">>first.txt
+    - stage:
+        name: build and push to GAR
+        identifier: build_and_push_to_GAR
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec:
+              size: small
+              imageSpec:
+                imageName: flask2:v1
+                connectorRef: dockerimagepp
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushGAR
+                  name: BuildAndPushGAR_1
+                  identifier: BuildAndPushGAR_1
+                  spec:
+                    connectorRef: buildpp
+                    host: " us-south1-docker.pkg.dev"
+                    projectID: spm-507905
+                    imageName: us-south1-docker.pkg.dev/spm-507905/build-pp
+                    tags:
+                      - v1

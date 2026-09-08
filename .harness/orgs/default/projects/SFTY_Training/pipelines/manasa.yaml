@@ -49,7 +49,7 @@ pipeline:
             os: Linux
             arch: Amd64
           runtime:
-            type: Cloud
+            type: Docker
             spec: {}
           execution:
             steps:
@@ -74,4 +74,21 @@ pipeline:
                   timeout: 10m
                   spec:
                     command: apply
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          echo"hello world">file
+                          ls file
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+          workspace: devara
         tags: {}

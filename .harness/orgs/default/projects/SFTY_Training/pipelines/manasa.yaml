@@ -57,7 +57,7 @@ pipeline:
             spec:
               size: small
               imageSpec:
-                imageName: ubuntu-latest
+                imageName: img-pp
           execution:
             steps:
               - step:
@@ -68,6 +68,6 @@ pipeline:
                     connectorRef: buildpp
                     host: us-south1-docker.pkg.dev
                     projectID: spm-507905
-                    imageName: us-south1-docker.pkg.dev/spm-507905/build-pp/img-1:v2
+                    imageName: us-south1-docker.pkg.dev/spm-507905/build-pp/img-pp
                     tags:
                       - v2

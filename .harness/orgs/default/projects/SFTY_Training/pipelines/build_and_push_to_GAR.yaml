@@ -49,6 +49,6 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: dockerppp
-                    repo: padmapriya26/harness-pp/docker-flask
+                    repo: padmapriya26/harness-pp
                     tags:
-                      - v2
+                      - v3

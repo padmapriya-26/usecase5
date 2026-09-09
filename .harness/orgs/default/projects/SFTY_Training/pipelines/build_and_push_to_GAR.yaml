@@ -51,7 +51,7 @@ pipeline:
                     connectorRef: dockerppp
                     repo: padmapriya26/harness-pp
                     tags:
-                      - v5
+                      - v7
     - stage:
         name: infra
         identifier: infra

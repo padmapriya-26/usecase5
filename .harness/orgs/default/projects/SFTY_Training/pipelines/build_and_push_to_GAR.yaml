@@ -40,6 +40,6 @@ pipeline:
                     connectorRef: push_to_GARPP
                     host: us-central1-docker.pkg.dev
                     projectID: spm-507905
-                    imageName: us-central1-docker.pkg.dev/spm-507905/build-to-gar/flask-pp:v1
+                    imageName: us-central1-docker.pkg.dev/spm-507905/build-to-gar/flask-pp
                     tags:
                       - v1

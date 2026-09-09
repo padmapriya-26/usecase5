@@ -51,4 +51,4 @@ pipeline:
                     connectorRef: dockerppp
                     repo: padmapriya26/harness-pp/docker-flask
                     tags:
-                      - v1
+                      - v2

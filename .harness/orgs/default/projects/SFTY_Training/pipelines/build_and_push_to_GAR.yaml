@@ -1,0 +1,45 @@
+pipeline:
+  name: build and push to GAR
+  identifier: build_and_push_to_GAR
+  projectIdentifier: SFTY_Training
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: priya
+        repoName: usecase5.git
+        build: <+input>
+  stages:
+    - stage:
+        name: BUILD
+        identifier: BUILD
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec:
+              size: small
+              imageSpec:
+                imageName: ubuntu-latest
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushGAR
+                  name: BuildAndPushGAR_1
+                  identifier: BuildAndPushGAR_1
+                  spec:
+                    connectorRef: push_to_GARPP
+                    host: us-central1-docker.pkg.dev
+                    projectID: spm-507905
+                    imageName: us-central1-docker.pkg.dev/spm-507905/build-to-gar/flask-pp:v1
+                    tags:
+                      - v1

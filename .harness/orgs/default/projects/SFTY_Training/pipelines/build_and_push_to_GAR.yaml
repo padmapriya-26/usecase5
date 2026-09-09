@@ -43,3 +43,12 @@ pipeline:
                     imageName: us-central1-docker.pkg.dev/spm-507905/build-to-gar/flask-pp
                     tags:
                       - v1
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: dockerpp
+                    repo: harness-pp
+                    tags:
+                      - v1

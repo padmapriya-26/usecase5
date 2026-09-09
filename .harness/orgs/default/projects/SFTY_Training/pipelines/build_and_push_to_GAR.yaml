@@ -48,7 +48,7 @@ pipeline:
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: dockerpp
-                    repo: harness-pp
+                    connectorRef: dockerppp
+                    repo: padmapriya26/harness-pp
                     tags:
                       - v1

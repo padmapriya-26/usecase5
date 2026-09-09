@@ -50,9 +50,9 @@ resource "google_compute_instance" "instance1" {
            //
         }
     }
-    metadata = {
-      ssh-keys = "padmapriyadev2:${file("/var/lib/jenkins/.ssh/id_ed25519.pub")}"
-    }
+    # metadata = {
+    #   ssh-keys = "padmapriyadev2:${file("/var/lib/jenkins/.ssh/id_ed25519.pub")}"
+    # }
 }
 
 resource "local_file" "file1" {

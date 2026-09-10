@@ -37,7 +37,7 @@ provider "google" {
 
 resource "google_compute_instance" "instance1" {
     name = "vm-1"
-    zone =  "asia-south1-b" 
+    zone =  "us-west1-b" 
     machine_type = "e2-micro"
     boot_disk {
       initialize_params {
@@ -55,7 +55,7 @@ resource "google_compute_instance" "instance1" {
     # }
 }
 
-resource "local_file" "file1" {
-  content  = "padmapriyadev2@${google_compute_instance.instance1.network_interface[0].access_config[0].nat_ip}"
-  filename = "/var/lib/jenkins/workspace/ip.txt"
-}
+# resource "local_file" "file1" {
+#   content  = "padmapriyadev2@${google_compute_instance.instance1.network_interface[0].access_config[0].nat_ip}"
+#   filename = "/var/lib/jenkins/workspace/ip.txt"
+# }
